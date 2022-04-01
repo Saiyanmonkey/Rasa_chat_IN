@@ -1,0 +1,131 @@
+version: "3.0"
+nlu:
+- intent: greet
+  examples: |
+    - halo
+    - hi
+    - hai
+    - pagi
+    - selamat sore
+    - selamat pagi
+    - oy
+    - ayo
+    - cuyy
+    - siang
+    - sore
+    - ping
+- intent: goodbye
+  examples: |
+    - dadah
+    - sampai jumpa
+    - sampai ketemu nanti
+    - selamat malam
+    - bye
+    - dah
+    - sampai jumpa kembali
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - ya
+    - y
+    - yes
+    - yoi
+    - boleh
+    - yo
+    - ya, trims
+- intent: deny
+  examples: |
+    - no
+    - gak
+    - g
+    - engga
+    - engga kok
+    - ga
+    - nga
+- intent: mood_great
+  examples: |
+    - Sempurna
+    - bagus
+    - baik
+    - kek raja
+    - senang
+    - sangat baik
+    - baik kok
+    - Alhamdulillah baik
+- intent: mood_unhappy
+  examples: |
+    - sedih
+    - jelek
+    - sedih banget
+    - parah
+    - gak baik
+    - stress
+    - gak seneng
+    - tidak senang
+- intent: bot_challenge
+  examples: |
+    - lu robot?
+    - lu orang bukan?
+    - gue ngomong sama robot?
+    - gue ngomong sama orang?
+- intent: confirm_data
+  examples: |
+    - request [OTP](complain)
+    - masalah dengan [OTP](complain)
+    - [OTP](complain)
+- intent: change_data
+  examples: |
+    - [saya ingin ganti data](comlain)
+    - [ganti data](complain)
+    - [bisa ganti personal info gak](complain)?
+    - [pingin ganti info](complain)
+    - [tolong ganti info akunku donk](complain)
+    - saya ingin [ganti data](complain)
+- intent: create_account
+  examples: |
+    - gimana cara [bikin akun](complain)?
+    - saya ingin [bikin akun](complain)
+    - tolong [buatin akun](complain) donk
+    - [bikin akun](complain)
+    - [register akun](complain)
+    - gua pengen [bikin akun](complain)
+    - Saya ingin [registrasi](complain)
+    - [Registrasi akun](complain)
+- intent: complain
+  examples: |
+    - gw pengen tanya tentang [saldo](complain) dong
+    - [saldo](complain)
+    - ada masalah dengan [saldo](complain)
+- intent: inform_name
+  examples: |
+    - [Muhammad Alvin Pramadrian Aria](name)
+    - Nama saya [Halistiani Trisarita](name)
+    - [Roy Yuliandri](name)
+    - Nama: [Angga Ferdiansyah](name)
+    - [Razqivalia Auditya](name)
+    - [Fathan Ramadhan](name)
+    - [Muhammad Alvin](name)
+    - [Arya Ballon](name)
+    - [Alfathan Dandy](name)
+    - [Aria Baron](name)
+    - [Muhammad Alvin Pramadrian Aria](name)
+- intent: inform_nik
+  examples: |
+    - [3277020609000028](nik)
+    - [3576447103910003](nik)
+    - [2171101212749021](nik)
+    - [3277042105690047](nik)
+    - [3277020407020079](nik)
+    - [3277020609000028](nik)
+- intent: inform_mail
+  examples: |
+    - [alvinaria06@gmail.com](mail)
+    - [roy_audy@yahoo.com](mail)
+    - [ncezz3005@ymail.com](mail)
+    - [ncezzenny@yahoo.com](mail)
+    - [alvinaudy45@gmail.com](mail)
+    - [rocket_admin@gmail.com](mail)
+    - [ariabrondong29@yahoo.com](mail)
+    - [alvinaria06@ymail.com](mail)

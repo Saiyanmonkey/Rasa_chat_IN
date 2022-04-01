@@ -1,0 +1,167 @@
+version: '3.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: false
+intents:
+- inform_nik
+- inform_mail
+- inform_name
+- confirm_data
+- stop
+- create_account
+- change_data
+- goodbye
+- inform_complain
+- new_data
+- greet
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- complain
+entities:
+- complain
+- mail
+- name
+- nik
+- password
+- telephone
+slots:
+  nik:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: customer_form
+        requested_slot: nik
+  name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: customer_form
+        requested_slot: name
+  mail:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: customer_form
+        requested_slot: mail
+  complain:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: complain
+      conditions:
+      - active_loop: customer_form
+        requested_slot: complain
+responses:
+  utter_greet:
+  - text: Hai! Apa kabar
+  utter_cheer_up:
+  - text: Ini sesuatu untuk menghibur lo
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Bantu gak?
+  utter_happy:
+  - text: Kuy, lanjut
+  utter_goodbye:
+  - text: Dadah
+  utter_iamabot:
+  - text: Gue robot dari Rasa.
+  utter_confirm:
+  - text: |-
+      Hi.
+      selamat siang.
+      terkait kendala pada request OTP yang gagal.
+      kami sedang berkomunikasi dengan pihak aplikasi pinjaman.
+      mohon untuk menunggu.
+      namun sebelumnya silahkan isi data dibawah ini :
+
+      Nama :
+      NIK :
+      No Telepon :
+      Email :
+      Nama aplikasi pinjaman ( yang digunakan u/transaksi ) :
+      Keluhan/Kendala (detail) :
+      Mohon isi data diatas dan sertakan bukti screenshot saat kendala terjadi, agar tim kami dapat dengan mudah dalam melakukan pengecekan. Kami tunggu informasi selanjutnya.
+      Demikian yang dapat kami sampaikan, atas perhatiannya kami ucapkan terima kasih.
+
+      Regards,
+      CS Digisign
+  utter_change:
+  - text: |-
+      Dear Pelanggan Digisign,
+
+      Terima kasih telah menghubungi kami. Kami informasikan bahwa akun Anda telah aktif di Digisign.
+      Untuk akun Digisign yang telah aktif dapat melakukan perubahan data seperti email / nomor handphone / tanda tangan secara mandiri melalui website Digisign di https://app.digisign.id .
+
+      Jika ingin melakukan perubahan nomor handphone pada akun Digisign Anda, silakan masuk ke dashboard Digisign dengan login di website https://app.digisign.id -> pilih menu Pengaturan Akun -> pilih Ganti Nomor Telepon.
+
+      Sebelum melakukan perubahan data terhadap akun Digisign Anda, kami sarankan untuk Anda lakukan perubahan data yang sama dari aplikasi pinjaman/pendanaan yang pernah Anda gunakan.
+
+      Terima kasih.
+
+      Regards,
+      CS Digisign
+  utter_new:
+  - text: |-
+      Dear Pelanggan Digisign, 
+
+      Terima kasih untuk informasi yang diberikan, untuk selanjutnya kami akan melakukan pengecekan terlebih dahulu dan akan segera memprosesnya. Mohon kesediaannya menunggu, Kami akan menginformasikan kembali melalui email . 
+
+      Regards, 
+      CS Digisign
+  utter_create:
+  - text: |-
+      Terima kasih telah menghubungi Digisign.
+
+      Kami informasikan untuk mendaftar akun Digisign, anda dapat mendaftar pada aplikasi pinjaman/pendanaan yang ingin digunakan agar akun Digisign anda dapat terverifikasi dan terintegrasi dengan akun aplikasi tersebut.
+      Atau Anda bisa mendaftar manual pada web Digisign di https://app.digisign.id/registration.html
+      Terima kasih.
+
+      Regards,
+
+      CS Digisign
+  utter_complain:
+  - text: |-
+      Pelanggan Yth.
+
+      Mengenai pertanyaan tersebut, silahkan hubungi Customer Service dari aplikasi pinjaman/pendanaan yang anda gunakan untuk mendapatkan informasi lebih lanjut, dikarenakan Digisign hanya memfasilitasi tanda tangan elektronik/digital dan menangani kendala pada aplikasi Digisign saja.
+
+      Hormat kami,
+      CS Digisign
+  utter_ask_name:
+  - text: Tolong masukan nama anda...
+  utter_ask_nik:
+  - text: Tolong masukan nik anda...
+  utter_ask_mail:
+  - text: Tolong masukan e-mail anda...
+  utter_ask_complain:
+  - text: Tolong masukan kendala anda...
+actions:
+- action_act_complain
+- utter_cheer_up
+- utter_complain
+- utter_confirm
+- utter_create
+- utter_did_that_help
+- utter_goodbye
+- utter_greet
+- utter_happy
+- utter_iamabot
+- utter_new
+- validate_customer_form
+forms:
+  customer_form:
+    required_slots:
+    - nik
+    - name
+    - mail
+    - complain

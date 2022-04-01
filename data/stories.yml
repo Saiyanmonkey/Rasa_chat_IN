@@ -1,0 +1,202 @@
+version: "3.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: confirm_data
+    entities:
+    - comlain: pengen
+  - action: utter_confirm
+  - action: customer_form
+  - active_loop: customer_form
+  - slot_was_set:
+    - requested_slot: nik
+  - slot_was_set:
+    - nik: '3576447103910003'
+  - slot_was_set:
+    - requested_slot: name
+  - intent: inform_name
+    entities:
+    - name: Fathan Ramadhan
+  - action: customer_form
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - name: Muhammad Alvin
+  - slot_was_set:
+    - requested_slot: mail
+  - slot_was_set:
+    - mail: alvinaudy45@gmail.com
+  - slot_was_set:
+    - requested_slot: complain
+  - slot_was_set:
+    - complain: registrasi
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_new
+  - action: action_act_complain
+
+- story: interactive_story_3
+  steps:
+  - intent: confirm_data
+    entities:
+    - complain: konfimrasi data
+  - action: utter_confirm
+  - action: customer_form
+  - active_loop: customer_form
+  - slot_was_set:
+    - requested_slot: nik
+  - slot_was_set:
+    - nik: '3277042105690047'
+  - slot_was_set:
+    - requested_slot: name
+  - intent: inform_name
+    entities:
+    - name: Arya Ballon
+  - intent: inform_name
+    entities:
+    - name: Alfathan Dandy
+  - action: customer_form
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - name: Alfathan Dandy
+  - slot_was_set:
+    - requested_slot: mail
+  - slot_was_set:
+    - mail: rocket_admin@gmail.com
+  - slot_was_set:
+    - requested_slot: complain
+  - slot_was_set:
+    - complain: Saya ingin registrasi
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_new
+  - action: action_act_complain
+
+- story: interactive_story_4
+  steps:
+  - intent: confirm_data
+    entities:
+    - complain: konfirmasi data
+  - action: utter_confirm
+  - action: customer_form
+  - active_loop: customer_form
+  - slot_was_set:
+    - requested_slot: nik
+  - slot_was_set:
+    - nik: '3277020407020079'
+  - slot_was_set:
+    - requested_slot: name
+  - slot_was_set:
+    - name: Aria Baron
+  - slot_was_set:
+    - requested_slot: mail
+  - slot_was_set:
+    - mail: ariabrondong29@yahoo.com
+  - slot_was_set:
+    - requested_slot: complain
+  - slot_was_set:
+    - complain: ganti data
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_new
+  - action: action_act_complain
+
+- story: interactive_story_validation
+  steps:
+  - intent: confirm_data
+    entities:
+    - complain: konfirmasi data
+  - action: utter_confirm
+  - action: customer_form
+  - active_loop: customer_form
+  - slot_was_set:
+    - requested_slot: nik
+  - intent: inform_nik
+    entities:
+    - nik: '3277020609000028'
+  - slot_was_set:
+    - nik: '3277020609000028'
+  - action: validate_customer_form
+  - action: customer_form
+  - slot_was_set:
+    - requested_slot: name
+  - intent: inform_name
+    entities:
+    - name: Muhammad Alvin Pramadrian Aria
+  - slot_was_set:
+    - name: Muhammad Alvin Pramadrian Aria
+  - action: validate_customer_form
+  - action: customer_form
+  - slot_was_set:
+    - requested_slot: mail
+  - intent: inform_mail
+    entities:
+    - mail: alvinaria06@ymail.com
+  - slot_was_set:
+    - mail: alvinaria06@ymail.com
+  - action: validate_customer_form
+  - action: customer_form
+  - slot_was_set:
+    - requested_slot: complain
+  - intent: create_account
+    entities:
+    - complain: Registrasi akun
+  - slot_was_set:
+    - complain: Registrasi akun
+  - action: validate_customer_form
+  - action: customer_form
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_new
+  - action: action_act_complain
+  - intent: stop

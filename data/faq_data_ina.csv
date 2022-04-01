@@ -1,0 +1,43 @@
+question,answer
+konfirmasi data,"Hi.
+selamat siang.
+terkait kendala pada request OTP yang gagal.
+kami sedang berkomunikasi dengan pihak aplikasi pinjaman.
+mohon untuk menunggu.
+namun sebelumnya silahkan isi data dibawah ini :
+
+Nama :
+NIK :
+No Telepon :
+Email :
+Nama aplikasi pinjaman ( yang digunakan u/transaksi ) :
+Keluhan/Kendala (detail) :"
+ganti data,"Dear Pelanggan Digisign,
+
+Terima kasih telah menghubungi kami. Kami informasikan bahwa akun Anda telah aktif di Digisign.
+Untuk akun Digisign yang telah aktif dapat melakukan perubahan data seperti email / nomor handphone / tanda tangan secara mandiri melalui website Digisign di https://app.digisign.id .
+
+Jika ingin melakukan perubahan nomor handphone pada akun Digisign Anda, silakan masuk ke dashboard Digisign dengan login di website https://app.digisign.id -> pilih menu Pengaturan Akun -> pilih Ganti Nomor Telepon.
+
+Sebelum melakukan perubahan data terhadap akun Digisign Anda, kami sarankan untuk Anda lakukan perubahan data yang sama dari aplikasi pinjaman/pendanaan yang pernah Anda gunakan.
+
+Terima kasih.
+ 
+Regards,
+CS Digisign"
+register register buat akun,"Selamat pagi,
+Terima kasih telah menghubungi Digisign.
+
+Kami informasikan untuk mendaftar akun Digisign, anda dapat mendaftar pada aplikasi pinjaman/pendanaan yang ingin digunakan agar akun Digisign anda dapat terverifikasi dan terintegrasi dengan akun aplikasi tersebut.
+Atau Anda bisa mendaftar manual pada web Digisign di https://app.digisign.id/registration.html
+Terima kasih.
+
+Regards,
+
+CS Digisign"
+complain saldo,"Pelanggan Yth.
+
+Mengenai pertanyaan tersebut, silahkan hubungi Customer Service dari aplikasi pinjaman/pendanaan yang anda gunakan untuk mendapatkan informasi lebih lanjut, dikarenakan Digisign hanya memfasilitasi tanda tangan elektronik/digital dan menangani kendala pada aplikasi Digisign saja.
+
+Hormat kami,
+CS Digisign"
